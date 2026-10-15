@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aroma Coffee — премиальная кофейня. Демо-сайт вымышленного заведения." />
+  <title>Aroma Coffee — кофейня с характером</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <script>
+  // Применяем тему до отрисовки, чтобы не было «вспышки»
+  (function () {
+    try {
+      var saved = localStorage.getItem('aroma-theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Aroma Coffee — на главную">
+        <span class="logo-mark" aria-hidden="true">A</span>
+        <span class="logo-text">Aroma&nbsp;Coffee</span>
+      </a>
+      
+      <button
+      class="theme-toggle"
+      type="button"
+      id="theme-toggle"
+      aria-label="Переключить на тёмную тему"
+      aria-pressed="false"
+      title="Переключить тему"
+      >
+      <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none"
+          stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      </button>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Открыть меню"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#features">Преимущества</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+          <li>
+            <a class="btn btn-outline" href="mailto:demo@aromacoffee.example?subject=Бронирование%20столика">
+              Связаться
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Кофейня · Демо-версия</p>
+          <h1 id="hero-title">Каждая чашка — маленький ритуал</h1>
+          <p class="lead">
+            Обжарка небольшими партиями, зерно из Эфиопии и Колумбии,
+            тишина и тёплый свет. Заходите за своим идеальным эспрессо.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="mailto:demo@aromacoffee.example?subject=Бронирование%20столика&body=Здравствуйте!%20Хочу%20забронировать%20столик%20на..."
+            >
+              Забронировать столик
+            </a>
+            <a class="btn btn-ghost" href="#menu">Смотреть меню</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="coffee-cup">
+            <div class="coffee-surface"></div>
+            <div class="cup-handle"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-grain" aria-hidden="true"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container two-col">
+        <div class="about-media">
+          <img
+            src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 700'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236F4E37'/%3E%3Cstop offset='1' stop-color='%233E2723'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='700' fill='url(%23g)'/%3E%3Ccircle cx='300' cy='350' r='140' fill='%23C8A27A' opacity='0.35'/%3E%3Ctext x='300' y='360' font-family='Georgia, serif' font-size='48' fill='%23F5EDE4' text-anchor='middle'%3EAroma%3C/text%3E%3C/svg%3E"
+            alt="Интерьер кофейни Aroma Coffee: тёплый свет, деревянные столы и чашки эспрессо"
+            loading="lazy"
+            width="600"
+            height="700"
+          />
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">О нас</p>
+          <h2 id="about-title">Кофе, к которому хочется возвращаться</h2>
+          <p>
+            Aroma Coffee — небольшая кофейня, где мы обжариваем зерно
+            каждую неделю и варим эспрессо на профессиональной машине.
+            Здесь нет спешки: только аромат, мягкий свет и люди,
+            которые любят своё дело.
+          </p>
+          <p>
+            Мы работаем с фермерскими лотами, следим за свежестью и
+            всегда готовы подсказать, что выбрать — фильтр, флэт-уайт
+            или классический американо.
+          </p>
+          <ul class="about-stats" role="list">
+            <li><strong>12</strong><span>сортов зерна</span></li>
+            <li><strong>7</strong><span>лет опыта</span></li>
+            <li><strong>100%</strong><span>свежая обжарка</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section section-alt" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Меню</p>
+          <h2 id="menu-title">Шесть напитков, которые стоит попробовать</h2>
+          <p class="section-sub">Цены указаны в демонстрационных целях.</p>
+        </header>
+
+        <div class="menu-filters" role="group" aria-label="Фильтр меню по категориям">
+            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
+                Все
+            </button>
+            <button type="button" class="filter-btn" data-filter="coffee" aria-pressed="false">
+                Кофе
+            </button>
+            <button type="button" class="filter-btn" data-filter="tea" aria-pressed="false">
+                Чай
+            </button>
+            <button type="button" class="filter-btn" data-filter="cold" aria-pressed="false">
+                Холодные
+            </button>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card" data-category="coffee">
+            <h3>Эспрессо</h3>
+            <p>Плотный, с нотками тёмного шоколада и карамели.</p>
+            <p class="price"><span>190 ₽</span></p>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <h3>Американо</h3>
+            <p>Эспрессо с горячей водой — мягкий и чистый вкус.</p>
+            <p class="price"><span>220 ₽</span></p>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <h3>Капучино</h3>
+            <p>Бархатное молоко и плотная молочная пена.</p>
+            <p class="price"><span>280 ₽</span></p>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <h3>Флэт-уайт</h3>
+            <p>Двойной эспрессо и тонкий слой микропены.</p>
+            <p class="price"><span>310 ₽</span></p>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <h3>Латте с ванилью</h3>
+            <p>Нежный, сливочный, с натуральной ванилью.</p>
+            <p class="price"><span>320 ₽</span></p>
+          </article>
+
+          <article class="menu-card" data-category="coffee">
+            <h3>Фильтр V60</h3>
+            <p>Яркий, фруктовый, для тех, кто любит нюансы.</p>
+            <p class="price"><span>340 ₽</span></p>
+          </article>
+
+                <!-- Чай -->
+        <article class="menu-card" data-category="tea">
+            <h3>Чай с бергамотом</h3>
+            <p>Чёрный чай, цитрусовая цедра и лёгкая дымность.</p>
+            <p class="price"><span>240 ₽</span></p>
+        </article>
+
+        <article class="menu-card" data-category="tea">
+            <h3>Жасминовый зелёный</h3>
+            <p>Мягкий зелёный чай с цветочным ароматом жасмина.</p>
+            <p class="price"><span>260 ₽</span></p>
+        </article>
+
+        <!-- Холодные -->
+        <article class="menu-card" data-category="cold">
+            <h3>Айс-латте</h3>
+            <p>Эспрессо, холодное молоко и лёд — освежающе и мягко.</p>
+            <p class="price"><span>300 ₽</span></p>
+        </article>
+
+        <article class="menu-card" data-category="cold">
+            <h3>Колд брю</h3>
+            <p>Медленная холодная экстракция 12 часов, чистый вкус.</p>
+            <p class="price"><span>330 ₽</span></p>
+            </article>
+        </div>
+        <p
+            class="menu-status"
+            id="menu-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+        ></p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Преимущества</p>
+          <h2 id="features-title">Почему выбирают Aroma</h2>
+        </header>
+
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20h16" />
+                <path d="M6 20V10a6 6 0 0 1 12 0v10" />
+                <path d="M9 4c0 1.5 1 2 1 3M12 3c0 1.5 1 2 1 3M15 4c0 1.5 1 2 1 3" />
+              </svg>
+            </div>
+            <h3>Свежая обжарка</h3>
+            <p>Обжариваем зерно каждую неделю малыми партиями.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l2.6 5.3 5.9.9-4.3 4.2 1 5.8L12 16.9 6.8 19.2l1-5.8L3.5 9.2l5.9-.9L12 3z" />
+              </svg>
+            </div>
+            <h3>Опытные бариста</h3>
+            <p>Команда с чемпионскими титулами и любовью к делу.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10z" />
+                <circle cx="12" cy="11" r="2.5" />
+              </svg>
+            </div>
+            <h3>Удобная локация</h3>
+            <p>В центре города, в двух минутах от метро.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6" />
+                <path d="M2 7h20v5H2z" />
+                <path d="M12 7v13" />
+                <path d="M12 7S9 3 7 4.5 9 7 12 7zM12 7s3-4 5-2.5S15 7 12 7z" />
+              </svg>
+            </div>
+            <h3>Уютная атмосфера</h3>
+            <p>Тишина, винил и мягкий свет — идеально для работы.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="section section-alt" id="contacts" aria-labelledby="contacts-title">
+      <div class="container two-col contacts-layout">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2 id="contacts-title">Заходите в гости</h2>
+          <p class="section-sub">
+            Все контактные данные ниже — демонстрационные (вымышленные).
+          </p>
+
+          <address class="contact-list">
+            <p>
+              <span class="contact-label">Адрес</span>
+              г. Примерск, ул. Демонстрационная, 12
+            </p>
+            <p>
+              <span class="contact-label">Телефон</span>
+              <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            </p>
+            <p>
+              <span class="contact-label">Email</span>
+              <a href="mailto:demo@aromacoffee.example">demo@aromacoffee.example</a>
+            </p>
+            <p>
+              <span class="contact-label">Часы работы</span>
+              Ежедневно, 8:00 — 22:00
+            </p>
+          </address>
+
+          <a
+            class="btn btn-primary"
+            id="contact-btn"
+            href="mailto:demo@aromacoffee.example?subject=Вопрос%20из%20Aroma%20Coffee&body=Здравствуйте!%20У%20меня%20есть%20вопрос..."
+          >
+            Написать нам
+          </a>
+          <p class="demo-note" role="note">
+            ⚠️ Это демо-сайт. Адрес, телефон и email вымышлены,
+            письма не доставляются.
+          </p>
+        </div>
+
+        <div class="map-placeholder" role="img" aria-label="Схематичная карта: кофейня Aroma Coffee расположена в центре города (демо)">
+          <div class="map-grid" aria-hidden="true"></div>
+          <div class="map-pin" aria-hidden="true">
+            <span class="pin"></span>
+            <span class="pin-label">Aroma Coffee</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aroma Coffee. Демонстрационный проект.</p>
+      <ul class="social" role="list">
+        <li><a href="#top" aria-label="Вверх страницы">Наверх ↑</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
